@@ -36,7 +36,7 @@ RUN rm -f /etc/apt/sources.list.d/cuda.list && rm -f /etc/apt/sources.list.d/nvi
 RUN echo "Installing base packages..." \
     && apt-get update --fix-missing \
     && apt-get install -y apt-utils 2> /dev/null \
-    && apt-get install -y wget zip tzdata \
+    && apt-get install -y wget zip tzdata git \
     && apt-get install -y libgl1-mesa-glx \
     && xargs -a /home/${RUNTIME_USER}/apt.txt apt-get install -y \
     && apt-get clean \
